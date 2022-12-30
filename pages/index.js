@@ -42,14 +42,14 @@ function App() {
 
   // sign out of google
   async function signout(jwt) {
-    const { error } = await supabaseClient.auth.signOut(jwt);
-    console.log("error", error);
+    // const { error } = await supabaseClient.auth.signOut(jwt);
+    // console.log("error", error);
   }
 
   return (
     <div className={styles.mainDiv}>
       {!session && <Hero />}
-      <div id="form" className={styles.rightDiv}>
+      <div id="form" className={styles.waitlistDiv}>
         {!session ? (
           <div
             onClick={(e) => {

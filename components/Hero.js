@@ -17,7 +17,7 @@ function Hero() {
   };
 
   return (
-    <div id="hero" className={styles.leftDiv}>
+    <div id="hero" className={styles.heroDiv}>
       <div className={styles.firstHalf}>
         <p>🚧 Builder Mode On 🚧</p>
       </div>
