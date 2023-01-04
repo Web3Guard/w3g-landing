@@ -34,7 +34,7 @@ function App() {
     const { data, error } = await supabaseClient.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/success`,
+        redirectTo: `${window.location.origin}`,
       },
     });
     console.log(data);

@@ -61,7 +61,35 @@
   color: #000;
   margin-bottom: 1%;
 }
+@media only screen and (min-width: 768px) {
+  /* tablets and desktop */
+  .firstHalf {
+    font-size: 50px;
+  } 
+  .secondHalf{
+    font-size: 20px;
+  } 
+  .waitlistDiv p{
+    font-size: 20px;
+  }
+}
 
+@media only screen and (max-width: 767px) {
+  /* phones */
+  .firstHalf {
+    font-size: 30px;
+  }  
+  .secondHalf{
+    font-size: 15px;
+  } 
+  .waitlistDiv p{
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  /* portrait phones */
+}
 .waitlistDiv div {
   border-radius: 5px;
 }
