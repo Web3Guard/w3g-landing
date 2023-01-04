@@ -69,6 +69,9 @@
   .secondHalf{
     font-size: 20px;
   } 
+  .waitlistDiv{
+    margin-top: 25%;
+  }
   .waitlistDiv p{
     font-size: 20px;
   }
@@ -82,6 +85,9 @@
   .secondHalf{
     font-size: 15px;
   } 
+  .waitlistDiv{
+    margin-top: 50%;
+  }
   .waitlistDiv p{
     font-size: 10px;
   }
