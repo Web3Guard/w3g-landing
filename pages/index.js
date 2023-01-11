@@ -49,14 +49,14 @@ function App() {
   return (
     <div className={styles.mainDiv}>
       {!session && <Hero />}
-      <div id="form" className={styles.waitlistDiv}>
+      <div id="form" className={styles.waitlistDiv} style={{ cursor: "pointer" }}>
         {!session ? (
           <div
             onClick={(e) => {
               signInWithGoogle(e);
             }}
           >
-            <p style={{ cursor: "pointer" }}>
+            <p className="waitlistp">
               {" "}
               🚀 Join the waitlist via Google 🚀
             </p>

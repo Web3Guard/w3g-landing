@@ -35,11 +35,36 @@
   font-size: 25px;
   line-height: 61px;
   /* identical to box height */
-
+  transition: transform .2s;
   color: #ffffff;
 
   /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
 }
+
+.secondHalf:hover {
+  transform: scale(1.25);
+}
+/* .waitlistDiv {
+  text-align: center;
+  display: none;
+  flex-direction: column;
+  padding: 2%;
+  padding-top: 0%;
+  align-items: center;
+  border-radius: 12px;
+  background: white;
+  opacity: 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+} */
+/* .waitlistDiv{
+  transition: transform .2s;
+} */
+/* 
+.waitlistDiv:hover {
+  background-color: rgb(133, 222, 238);
+  color: white;
+  transform: scale(1.1);
+} */
 
 .waitlistDiv {
   text-align: center;
@@ -52,8 +77,28 @@
   background: white;
   opacity: 0;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  transition: 1s all ease;
+}
+.waitlistDiv ::before{
+  background: rgb(133, 222, 238);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
 }
 
+.waitlistDiv ::before{
+  width: 0%;
+  height: 100%;
+}
+
+.waitlistDiv :hover::before{
+  width: 100%;
+}
 .waitlistDiv p {
   font-weight: 800;
   font-size: 30px;
