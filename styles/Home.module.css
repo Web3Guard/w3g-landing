@@ -1,19 +1,33 @@
+.mainDiv {
+  display: flex;
+  margin: 10% 5%;
+  justify-content: center;
+}
 
-.leftDiv{
-  background: rgba(5, 205, 49, 0.7);
+.heroDiv {
+  background: rgb(133, 222, 238);
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  padding: 0 2%;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  animation: bounce 1s infinite alternate;
+  -webkit-animation: bounce 1s infinite alternate;
 }
 .firstHalf {
-  margin-top: 15%;
+  /* margin-top: 15%; */
   text-align: center;
   font-weight: 800;
   font-size: 75px;
   line-height: 91px;
   /* identical to box height */
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
 }
 
 .secondHalf {
-  margin-top: -3%;
+  /* margin-top: -3%; */
   text-align: center;
   font-family: "Space Mono", monospace;
   font-style: normal;
@@ -21,46 +35,160 @@
   font-size: 25px;
   line-height: 61px;
   /* identical to box height */
-
+  transition: transform .2s;
   color: #ffffff;
 
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
 }
 
-.rightDiv {
+.secondHalf:hover {
+  transform: scale(1.25);
+}
+/* .waitlistDiv {
   text-align: center;
+  display: none;
+  flex-direction: column;
+  padding: 2%;
+  padding-top: 0%;
+  align-items: center;
+  border-radius: 12px;
+  background: white;
+  opacity: 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+} */
+/* .waitlistDiv{
+  transition: transform .2s;
+} */
+/* 
+.waitlistDiv:hover {
+  background-color: rgb(133, 222, 238);
+  color: white;
+  transform: scale(1.1);
+} */
+
+.waitlistDiv {
+  text-align: center;
+  display: none;
+  flex-direction: column;
+  padding: 2%;
+  padding-top: 0%;
+  align-items: center;
+  border-radius: 12px;
+  background: white;
+  opacity: 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  transition: 1s all ease;
+}
+.waitlistDiv ::before{
+  background: rgb(133, 222, 238);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
 }
 
-.rightDiv p {
+.waitlistDiv ::before{
+  width: 0%;
+  height: 100%;
+}
+
+.waitlistDiv :hover::before{
+  width: 100%;
+}
+.waitlistDiv p {
   font-weight: 800;
   font-size: 30px;
-  line-height: 61px;
+
+  color: #000;
   margin-bottom: 1%;
 }
+@media only screen and (min-width: 768px) {
+  /* tablets and desktop */
+  .firstHalf {
+    font-size: 50px;
+  } 
+  .secondHalf{
+    font-size: 20px;
+  } 
+  .waitlistDiv{
+    margin-top: 20%;
+  }
+  .waitlistDiv p{
+    font-size: 20px;
+  }
+}
 
+@media only screen and (max-width: 767px) {
+  /* phones */
+  .firstHalf {
+    font-size: 30px;
+  }  
+  .secondHalf{
+    font-size: 15px;
+  } 
+  .waitlistDiv{
+    margin-top: 50%;
+  }
+  .waitlistDiv p{
+    font-size: 10px;
+  }
+}
 
-
-.rightDiv div{
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  /* portrait phones */
+}
+.waitlistDiv div {
   border-radius: 5px;
 }
-.rightDiv input{
-  width: 15%;
-  height: 3.5vh;
-  border-radius: 5px;
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+@-webkit-keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-20px);
+  }
 }
 
-.rightDiv button{
-  width: 25%;
-  padding-top: 0.75%;
-  padding-bottom: 0.75%;
-  padding-right: 5%;
-  padding-left: 5%;
-  border-radius: 10px;
-  background-color:  rgba(5, 205, 49, 0.7);
-  color: white;
-  font-weight: 800;
-line-height: 30px;
-border: black 1px;
-cursor: pointer;
-font-size: 1.5vh;
+
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
